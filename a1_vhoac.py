@@ -37,7 +37,7 @@ def sanitize(obj1,obj2):
     numbers from 0-9
     special characters: '/', '-' and '.'
     '''
-    ...
+    
     
     return results
 
@@ -45,7 +45,7 @@ def size_check(obj, intobj):
     '''
     after data is sanitized, check whether the resulting object has a length of 8 characters
     '''
-    ...
+    
 
     return status
 
@@ -61,7 +61,7 @@ def range_check(obj1, obj2):
         - If month is 'Feb' and year is leap year: 29
         - If month is 'Apr', 'Jun', 'Aug', 'Sep' or 'Nov': 30
     '''
-    ...
+    
     
     return status
     
@@ -70,7 +70,7 @@ def usage():
     if incorrect number of arugments are entered, activate this function
     display a message indicating how to use the program
     '''
-    ...
+    status = "Usage: a1_vhoac.py YYYYMMDD|YYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD"
     return status
 
 if __name__ == "__main__":
