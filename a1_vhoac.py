@@ -22,8 +22,11 @@ def leap_year(obj):
     '''
     determines whether year given is a leap year
     '''
-    ...
-
+    status = ''
+    if year % 4 == 0:
+        status = 'True'
+    else:
+        status = 'False'
     return status
 
 def sanitize(obj1,obj2):
