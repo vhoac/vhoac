@@ -37,8 +37,9 @@ def sanitize(obj1,obj2):
     numbers from 0-9
     special characters: '/', '-' and '.'
     ''' 
-        
-
+    for char in user_raw_data:
+        if char in '0123456789':
+            results += char
     return results
 
 def size_check(obj, intobj):
