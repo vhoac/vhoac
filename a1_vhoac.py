@@ -37,7 +37,7 @@ def sanitize(obj1,obj2):
     numbers from 0-9
     special characters: '/', '-' and '.'
     '''
-    
+     
     
     return results
 
@@ -45,8 +45,11 @@ def size_check(obj, intobj):
     '''
     after data is sanitized, check whether the resulting object has a length of 8 characters
     '''
-    
-
+    status = ''
+    if len(dob) != 8:
+         status = 'False'
+    else:
+         status = 'True'
     return status
 
 def range_check(obj1, obj2):
@@ -88,7 +91,7 @@ if __name__ == "__main__":
    allow_chars = '0123456789'
    dob = sanitize(user_raw_data, allow_chars)
    print('Sanitized user data:', dob)
-   # setp 4
+   # step 4
    result = size_check(dob,8)
    if result == False:
        print("Error 09: wrong data entered")
