@@ -36,9 +36,9 @@ def sanitize(obj1,obj2):
     allowed characters in user input include:
     numbers from 0-9
     special characters: '/', '-' and '.'
-    '''
-     
-    
+    ''' 
+        
+
     return results
 
 def size_check(obj, intobj):
@@ -56,7 +56,7 @@ def range_check(obj1, obj2):
     '''
     check range values for year, month and day
 
-    acceptable year values: 1900 or higher
+    acceptable year values: 1900 - 9999
     acceptable month values: 1 - 12
     acceptable day values:
         - If month is 'Jan', 'Mar', 'May', 'Jul', 'Oct' or 'Dec': 31
@@ -64,8 +64,12 @@ def range_check(obj1, obj2):
         - If month is 'Feb' and year is leap year: 29
         - If month is 'Apr', 'Jun', 'Aug', 'Sep' or 'Nov': 30
     '''
-    
-    
+    if year >= 1900 and year <= 9999:
+        if month >= 1 and month <= 12:
+            if day >= days_in_month:
+                status = 'True'
+    else:
+        status = 'False' 
     return status
     
 def usage():    
