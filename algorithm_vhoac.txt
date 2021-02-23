@@ -1,0 +1,46 @@
+Program: a1_vhoac.txt
+Author: Victor Hoac
+
+Program description:
+This program takes a date of birth, written in various formats, and returns the date in a standard format.
+
+leap_year() function:
+This function determines whether the year entered is a leap year.
+
+sanitize() function:
+This function takes dates with formats "yyyy/mm/dd", "yyyy-mm-dd" and "yyyy.mm.dd", and removes special characters to create the standard format "yyyymmdd".
+
+size_check() function:
+This function checks if the length of the formatted "date" argument is 8 characters long.
+
+range_check() function:
+This function checks whether the year extracted from user input is older than 1900. It also checks that the month and day extracted is valid.
+
+usage() function:
+This function checks whether the user has entered an arugment when executing the program.
+
+Running the program:
+
+Step 1
+- The usage() function is called, which will return a number of arguments. If the number of arguments returned is not 2 (the program name and the user inputted 'date' argument), the console will display an error message stating that the program was run with the incorrect amount of arguments, as well as how to use the program, then exits the program.
+
+Step 2
+- A tuple of month names and a set of days contained in a month are created. The user inputted 'date' argument is stored in a variable to be used later.
+
+Step 3
+- The sanitize() function is called, which returns the standard format of the "date" argument, stored into a new 'date of birth' variable for later use. The program then prints the standard date format on to the console.
+
+Step 4
+- The size_check() function is called, which will either return True or False. If the size_check() function returns False, the console will display an error message stating that the incorrect form of data input was entered, then exits the program.
+
+Step 5
+- The 'date of birth' variable has its characters split to create 'year', 'month' and 'day' variables. The first 4 characters will be designated to the 'year' variable, the next 2 for the 'month' variable, and the last 2 for the 'day' variable.
+
+Step 6
+- The range_check() function is called, and checks the 'year' variable for a year greater than 1900. If the year entered is less than 1900, the console displays an error message indicating that a year greater than 1900 must be entered, and exits the program. The range_check() function is called again to check whether the month entered is a valid month value. If the month value is not with the valid range, the console displays an error message indicating the month entered is not valid, and exits the program. The leap_year() function is called, which will either return True or False. If the leap_year() function returns True, the number of days contained within February become 29. The range_check() function is called a third time to check for a valid day value. If the day value is not valid, the console displays an error message indicating that the wrong day has been entered, and exits the program.
+
+Step 7
+- The 'date of birth' variable is reformatted into a 'new date of birth' variable, in the format of "mmm dd, yyyy", where 'mmm' is extracted from the tuple of month names defined in Step 2.
+
+Step 8
+- The console prints out the reformatted date of birth.
