@@ -5,19 +5,19 @@ Program description:
 This program takes a date of birth, written in various formats, and returns the date in a standard format.
 
 leap_year() function:
-This function determines whether the year entered is a leap year.
+This function determines whether the year entered is a leap year. The function will return either "True" or "False".
 
 sanitize() function:
-This function takes dates with formats "yyyy/mm/dd", "yyyy-mm-dd" and "yyyy.mm.dd", and removes special characters to create the standard format "yyyymmdd".
+This function takes dates with formats "yyyy/mm/dd", "yyyy-mm-dd" and "yyyy.mm.dd", and removes special characters to create the standard format "yyyymmdd". The function will return the resulting string.
 
 size_check() function:
-This function checks if the length of the formatted "date" argument is 8 characters long.
+This function checks if the length of the formatted "date" argument is 8 characters long. The function will return either "True" or "False".
 
 range_check() function:
-This function checks whether the year extracted from user input is older than 1900. It also checks that the month and day extracted is valid.
+This function checks whether the year extracted from user input is older than 1900. It also checks that the month and day extracted is valid. The function will return either "True" or "False".
 
 usage() function:
-This function checks whether the user has entered an arugment when executing the program.
+This function checks whether the user has entered exactly one arugment when executing the program. The function will return either "True" or "False".
 
 Running the program:
 
