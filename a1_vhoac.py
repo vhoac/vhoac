@@ -68,19 +68,22 @@ def range_check(obj1, obj2):
     '''
     status = ''
     if year >= 1900 and year <= 9999:
-        if month >= 1 and month <= 12:
-            if day >= days_in_month:
-                status = True
+        try:
+            if month in days_in_month.keys():
+                if day in days_in_month.values():    
+                    status = True
+        except KeyError:
+            status = False
     else:
         status = False
     return status
-    
+
 def usage():    
     '''
     if incorrect number of arugments are entered, activate this function
     display a message indicating how to use the program
     '''
-    status = "Usage: a1_vhoac.py YYYYMMDD|YYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD"
+    status = "Usage: a1_vhoac.py YYYYMMDD|YYYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD"
     return status
 
 if __name__ == "__main__":
@@ -97,11 +100,10 @@ if __name__ == "__main__":
    # step 3
    allow_chars = '0123456789'
    dob = sanitize(user_raw_data, allow_chars)
-   print('Sanitized user data:', dob)
    # step 4
    result = size_check(dob,8)
    if result == False:
-       print("Error 09: wrong data entered")
+       print("Error 09: wrong date entered")
        sys.exit()
    # step 5
    year = int(dob[0:4])
@@ -126,4 +128,4 @@ if __name__ == "__main__":
    # step 7
    new_dob = str(month_name[month - 1])+' '+ str(day)+', '+str(year)
    # step 8
-   print("Your date of birth is:", new_dob)  
+   print(new_dob)  
