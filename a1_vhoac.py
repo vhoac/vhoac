@@ -24,9 +24,9 @@ def leap_year(obj):
     '''
     status = ''
     if year % 4 == 0:
-        status = 'True'
+        status = True
     else:
-        status = 'False'
+        status = False
     return status
 
 def sanitize(obj1,obj2):
@@ -37,6 +37,7 @@ def sanitize(obj1,obj2):
     numbers from 0-9
     special characters: '/', '-' and '.'
     ''' 
+    results = ''
     for char in user_raw_data:
         if char in '0123456789':
             results += char
@@ -48,9 +49,9 @@ def size_check(obj, intobj):
     '''
     status = ''
     if len(dob) != 8:
-         status = 'False'
+         status = False
     else:
-         status = 'True'
+         status = True
     return status
 
 def range_check(obj1, obj2):
@@ -65,12 +66,13 @@ def range_check(obj1, obj2):
         - If month is 'Feb' and year is leap year: 29
         - If month is 'Apr', 'Jun', 'Aug', 'Sep' or 'Nov': 30
     '''
+    status = ''
     if year >= 1900 and year <= 9999:
         if month >= 1 and month <= 12:
             if day >= days_in_month:
-                status = 'True'
+                status = True
     else:
-        status = 'False' 
+        status = False
     return status
     
 def usage():    
